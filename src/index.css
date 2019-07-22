@@ -23,3 +23,7 @@ code {
   flex: 1;
   overflow: scroll;
 }
+
+footer {
+  flex-shrink: 0;
+}
