@@ -19,6 +19,7 @@ export const Auth0Provider = ({
   const [popupOpen, setPopupOpen] = useState(false);
 
   useEffect(() => {
+    console.log('>>', initOptions)
     const initAuth0 = async () => {
       const auth0FromHook = await createAuth0Client(initOptions);
       setAuth0(auth0FromHook);
