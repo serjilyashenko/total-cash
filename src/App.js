@@ -9,15 +9,15 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
+        <header>
+          <Navigation />
+        </header>
         <main className="Site-content">
           <Switch>
             <PrivateRoute path="/" exact component={Main} />
             <PrivateRoute path="/profile" component={Profile} />
           </Switch>
         </main>
-        <footer>
-          <Navigation />
-        </footer>
       </BrowserRouter>
     </div>
   );
