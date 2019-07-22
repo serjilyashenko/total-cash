@@ -1,13 +1,13 @@
 // src/components/Profile.js
 
-import React from "react";
-import { useAuth0 } from "../react-auth0-wrapper";
+import React from 'react';
+import { useAuth0 } from '../react-auth0-wrapper';
 
 const Profile = () => {
   const { loading, user } = useAuth0();
 
   if (loading || !user) {
-    return "Loading...";
+    return 'Loading...';
   }
 
   return (

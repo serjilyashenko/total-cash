@@ -1,8 +1,8 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Switch } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Profile from './components/Profile';
-import PrivateRoute from "./components/PrivateRoute";
+import PrivateRoute from './components/PrivateRoute';
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
           <NavBar />
         </header>
         <Switch>
-          <Route path="/" exact />
+          <PrivateRoute path="/" exact component={() => <img src="https://media.tenor.com/images/82517b1fbf01e0db1c2636319e2c6965/tenor.gif" />} />
           <PrivateRoute path="/profile" component={Profile} />
         </Switch>
       </BrowserRouter>
