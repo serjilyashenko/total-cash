@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import createAuth0Client from '@auth0/auth0-spa-js';
+import Loading from './components/Loading';
 
 const DEFAULT_REDIRECT_CALLBACK = () =>
   window.history.replaceState({}, document.title, window.location.pathname);
@@ -64,6 +65,7 @@ export const Auth0Provider = ({
     setIsAuthenticated(true);
     setUser(user);
   };
+
   return (
     <Auth0Context.Provider
       value={{
@@ -80,7 +82,7 @@ export const Auth0Provider = ({
         logout: (...p) => auth0Client.logout(...p)
       }}
     >
-      {children}
+      {loading ? <Loading /> : children}
     </Auth0Context.Provider>
   );
 };

@@ -2,7 +2,6 @@ import React from 'react';
 import { useAuth0 } from '../react-auth0-wrapper';
 import Loading from './Loading';
 import { makeStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
 import Avatar from '@material-ui/core/Avatar';
 import Grid from '@material-ui/core/Grid';
 
@@ -15,7 +14,7 @@ const useStyles = makeStyles({
 });
 
 const Profile = () => {
-  const { loading, user, isAuthenticated, logout } = useAuth0();
+  const { loading, user } = useAuth0();
   const classes = useStyles();
 
   if (loading || !user) {
@@ -25,11 +24,8 @@ const Profile = () => {
   return (
     <>
       <Grid container justify="center" alignItems="center">
-        <Avatar alt="Profile" src={user.picture} className={classes.bigAvatar} />
+        <Avatar alt="Profile" src={'https://media.tenor.com/images/82517b1fbf01e0db1c2636319e2c6965/tenor.gif'} className={classes.bigAvatar} />
       </Grid>
-      <h2>{user.name} {isAuthenticated && <Button color="secondary" onClick={() => logout()}>logout</Button>}</h2>
-      <p>{user.email}</p>
-      <code>{JSON.stringify(user, null, 2)}</code>
     </>
   );
 };
